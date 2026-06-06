@@ -20,9 +20,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Poppins', 'sans-serif'],
-				heading: ['Montserrat', 'sans-serif'],
-				serif: ['Playfair Display', 'serif'],
+				sans: ['Inter', 'sans-serif'],
+				heading: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+				serif: ['"Plus Jakarta Sans"', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
