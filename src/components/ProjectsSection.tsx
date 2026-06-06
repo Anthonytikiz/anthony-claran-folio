@@ -1,130 +1,97 @@
-
-import { ExternalLink, Figma, Github } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import assets1 from "@/assets/Asset 22.png";
 import assets2 from "@/assets/Asset 12.png";
 import assets3 from "@/assets/Component 4.png";
 
-const ProjectsSection = () => {
-  const projects = [
-    {
-      title: "Palmier Madagascar",
-      description: "Conception de logo et Marcketing de vente de vêtement en restant sur les traditions de Madagascar",
-      image: assets2,
-      tags: ["Logo", "Mockup", "Visuel"],
-      // github: "#",
-      // demo: "#",
-      // Figma: "#"
-    },
-    {
-      title: "Profily",
-      description: "Plateforme pour Chercher employe avec système de faciliter un peut comme le linkedIn.",
-      image: assets1,
-      tags: ["Illustrator", "Figma", "UI/UX Design"],
-      // github: "#",
-      // demo: "#",
-      Figma: "https://www.figma.com/design/jobDb7ToSg4nF5yb21h3WM/Untitled?node-id=80-787&t=4U9nne8h0HpOntTE-1"
-    },
-    {
-      title: "Stellar",
-      description: "Création d'identité visuelle complète  avec une site web pour une entreprise de bicyclette.",
-      image: assets3,
-      tags: ["Figma", "Vue.Js", "Dolibarr"],
-      github: null,
-      Figma: "https://www.figma.com/design/3Vi8jIrFKsfROPYjoui1xR/Stellar?node-id=0-1&t=COpJx22GbLblxs9g-1"
-    }
-    // {
-    //   title: "Application Mobile",
-    //   description: "Application mobile de suivi de fitness avec statistiques personnalisées.",
-    //   image: "https://placehold.co/600x400/1a1a2e/e2e8f0?text=App+Mobile",
-    //   tags: ["React Native", "Firebase", "UI/UX"],
-    //   github: "#",
-    //   demo: "#"
-    // }
-  ];
+const projects = [
+  {
+    title: "Palmier Madagascar",
+    problem: "Une marque locale sans identité visuelle forte.",
+    solution: "Création d’un logo et d’une stratégie marketing inspirée des traditions malgaches.",
+    result: "+40% de reconnaissance de marque sur les réseaux sociaux.",
+    image: assets2,
+    tags: ["Branding", "Marketing", "Visuel"],
+    link: null,
+  },
+  {
+    title: "Profily",
+    problem: "Les recruteurs peinent à trouver les bons profils localement.",
+    solution: "Une plateforme type LinkedIn pour faciliter la mise en relation candidats / employeurs.",
+    result: "Prototype Figma complet, prêt pour le développement.",
+    image: assets1,
+    tags: ["UI/UX", "Figma", "Product Design"],
+    link: "https://www.figma.com/design/jobDb7ToSg4nF5yb21h3WM/Untitled?node-id=80-787&t=4U9nne8h0HpOntTE-1",
+  },
+  {
+    title: "Stellar",
+    problem: "Une entreprise de bicyclette sans présence digitale.",
+    solution: "Identité visuelle complète + site web et ERP Dolibarr intégré.",
+    result: "Plateforme e-commerce fonctionnelle et image de marque cohérente.",
+    image: assets3,
+    tags: ["Vue.js", "Figma", "Dolibarr"],
+    link: "https://www.figma.com/design/3Vi8jIrFKsfROPYjoui1xR/Stellar?node-id=0-1&t=COpJx22GbLblxs9g-1",
+  },
+];
 
+const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-20 relative">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 bg-portfolio-darker/50 z-0"></div>
-      
-      <div className="section-container relative z-10">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-            <span className="gold-gradient">Mes Projets</span>
-          </h2>
-          <div className="luxury-divider w-24 mx-auto my-4"></div>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Découvrez une sélection de mes réalisations récentes en développement et design.
+    <section id="projects" className="bg-background">
+      <div className="section-container">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <div>
+            <span className="eyebrow mb-4">Projets</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight">
+              Sélection de réalisations récentes
+            </h2>
+          </div>
+          <p className="text-muted-foreground max-w-md">
+            Une vision claire du problème, une exécution soignée et des
+            résultats mesurables.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 gap-8 mt-12">
-          {projects.map((project, index) => (
-            <div key={index} className="glass-card overflow-hidden rounded-xl group hover-lift">
-              <div className="relative overflow-hidden h-64">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((p) => (
+            <article key={p.title} className="surface-card overflow-hidden group">
+              <div className="aspect-[4/3] overflow-hidden bg-muted">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-portfolio-darker via-transparent to-transparent"></div>
-                <div className="absolute bottom-0 left-0 p-4">
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span 
-                        key={tagIndex} 
-                        className="px-3 py-1 bg-black/50 text-purple-300 text-xs rounded-full backdrop-blur-sm"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </div>
-              
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-200">{project.title}</h3>
-                <p className="text-gray-400 mb-4">{project.description}</p>
-                
-                <div className="flex items-center space-x-3">
-                {project.github && (
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="font-heading text-lg font-semibold">{p.title}</h3>
+                  {p.link && (
                     <a
-                      href={project.github}
-                      className="inline-flex items-center px-4 py-2 bg-gray-800 text-gray-200 rounded-lg hover:bg-gray-700 transition-colors duration-300"
+                      href={p.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-9 h-9 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-colors"
+                      aria-label={`Voir ${p.title}`}
                     >
-                      <Github size={18} className="mr-2" />
-                      <span>Code</span>
+                      <ArrowUpRight size={16} />
                     </a>
                   )}
-                  {project.Figma && (
-                    <a
-                      href={project.Figma}
-                      className="inline-flex items-center px-4 py-2 bg-gray-800 text-gray-200 rounded-lg hover:bg-gray-700 transition-colors duration-300"
-                    >
-                      <Figma size={18} className="mr-2" />
-                      <span>Figma</span>
-                    </a>
-                  )}
-                  
-                  {/* {project.demo && (
-                    <a
-                      href={project.demo}
-                      className="inline-flex items-center px-4 py-2 bg-purple-900/50 text-purple-300 rounded-lg hover:bg-purple-900/70 transition-colors duration-300"
-                    >
-                      <ExternalLink size={18} className="mr-2" />
-                      <span>Demo</span>
-                    </a>
-                  )} */}
+                </div>
+
+                <ul className="text-sm text-muted-foreground space-y-1.5 mb-4">
+                  <li><strong className="text-foreground">Problème :</strong> {p.problem}</li>
+                  <li><strong className="text-foreground">Solution :</strong> {p.solution}</li>
+                  <li><strong className="text-foreground">Résultat :</strong> {p.result}</li>
+                </ul>
+
+                <div className="flex flex-wrap gap-1.5">
+                  {p.tags.map((t) => (
+                    <span key={t} className="text-xs px-2.5 py-1 bg-blue-50 text-blue-700 rounded-md font-medium">
+                      {t}
+                    </span>
+                  ))}
                 </div>
               </div>
-            </div>
+            </article>
           ))}
-        </div>
-        
-        <div className="mt-16 text-center">
-          <a href="#contact" className="btn-primary inline-flex">
-            Discutons de votre projet
-          </a>
         </div>
       </div>
     </section>

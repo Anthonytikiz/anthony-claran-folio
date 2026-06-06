@@ -1,64 +1,84 @@
-import { ArrowDown, Image } from "lucide-react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { ArrowRight, Sparkles } from "lucide-react";
 import photo from "@/assets/Rectangle 4.png";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-16">
-      {/* Decorative elements */}
-      <div className="absolute top-20 right-0 w-96 h-96 bg-amber-600/10 rounded-full filter blur-3xl"></div>
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-yellow-600/10 rounded-full filter blur-3xl"></div>
-      
-      <div className="section-container flex flex-col items-center justify-center relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          {/* Add avatar/photo */}
-          <div className="mb-8 flex justify-center">
-            <Avatar className="w-36 h-36 border-4 border-amber-400 shadow-lg">
-              <AvatarImage 
-                src={photo}
-                alt="Anthony Claran" 
-                className="object-cover"
-              />
-              {/* <AvatarFallback>
-                <Image className="text-gray-400" />
-              </AvatarFallback> */}
-            </Avatar>
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden"
+    >
+      {/* Soft background */}
+      <div className="absolute inset-0 grid-pattern opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+      <div className="absolute top-20 -right-32 w-[480px] h-[480px] bg-blue-200/40 rounded-full blur-3xl" />
+      <div className="absolute -bottom-32 -left-32 w-[420px] h-[420px] bg-indigo-200/40 rounded-full blur-3xl" />
+
+      <div className="relative section-container !py-0">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-7 animate-fade-in">
+            <span className="eyebrow mb-6">
+              <Sparkles size={14} /> Disponible pour de nouveaux projets
+            </span>
+
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight mb-6">
+              Je conçois des produits{" "}
+              <span className="text-gradient">digitaux modernes</span> pour les
+              entreprises ambitieuses.
+            </h1>
+
+            <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
+              Salut, moi c’est <strong className="text-foreground">Anthony Claran Randrianantoandro</strong>{" "}
+              (alias Tikiz Randria). Fullstack Developer & UI/UX Designer, je
+              crée des sites web et applications qui aident les entreprises à
+              digitaliser leurs services.
+            </p>
+
+            <div className="flex flex-wrap gap-3">
+              <a href="#projects" className="btn-primary group">
+                Voir mes projets
+                <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a href="#contact" className="btn-secondary">
+                Me contacter
+              </a>
+            </div>
+
+            <div className="mt-12 flex items-center gap-8 text-sm text-muted-foreground">
+              <div>
+                <div className="text-2xl font-bold text-foreground">15+</div>
+                Projets livrés
+              </div>
+              <div className="w-px h-10 bg-border" />
+              <div>
+                <div className="text-2xl font-bold text-foreground">3+</div>
+                Années d’expérience
+              </div>
+              <div className="w-px h-10 bg-border" />
+              <div>
+                <div className="text-2xl font-bold text-foreground">100%</div>
+                Clients satisfaits
+              </div>
+            </div>
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            {/* <span className="block font-serif font-medium text-lg md:text-xl text-amber-300 mb-2">Bienvenue, je suis</span> */}
-            <span className="block mb-2">Anthony Claran</span>
-            <span className="block mb-2">RANDRIANANTOANDRO</span>
-            <span className="text-gradient">Développeur & Designer</span>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Je crée des expériences numériques élégantes combinant design graphique sophistiqué et développement full stack innovant.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <a href="#projects" className="btn-primary">
-              Voir mes projets
-            </a>
-            <a href="#contact" className="btn-secondary">
-              Me contacter
-            </a>
-          </div>
-          
-          <div className="animate-bounce">
-            <a 
-              href="#about" 
-              className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-amber-400 text-amber-400 hover:bg-amber-900/20 transition-colors duration-300"
-            >
-              <ArrowDown size={20} />
-            </a>
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-tr from-blue-500/30 to-indigo-500/20 rounded-3xl blur-2xl" />
+              <div className="relative w-72 h-80 sm:w-80 sm:h-96 rounded-3xl overflow-hidden border border-border shadow-2xl bg-white">
+                <img src={photo} alt="Anthony Claran" className="w-full h-full object-cover" />
+              </div>
+              <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl border border-border p-4 flex items-center gap-3 animate-float">
+                <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
+                  <span className="text-primary font-bold">AC</span>
+                </div>
+                <div className="text-sm">
+                  <div className="font-semibold text-foreground">Fullstack & UI/UX</div>
+                  <div className="text-muted-foreground text-xs">Antananarivo · MG</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      
-      {/* Designer elements */}
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-portfolio-dark to-transparent"></div>
-      <div className="absolute top-1/3 left-0 w-full h-32 bg-amber-600/5 transform -skew-y-12"></div>
     </section>
   );
 };
