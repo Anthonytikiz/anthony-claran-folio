@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
-import assets1 from "@/assets/Asset 22.png";
-import assets2 from "@/assets/Asset 12.png";
-import assets3 from "@/assets/Component 4.png";
+import profilyAsset from "@/assets/project-profily.png.asset.json";
+import palmierAsset from "@/assets/project-palmier.png.asset.json";
+import stellarAsset from "@/assets/project-stellar.png.asset.json";
 
 const projects = [
   {
@@ -9,7 +9,7 @@ const projects = [
     problem: "Une marque locale sans identité visuelle forte.",
     solution: "Création d’un logo et d’une stratégie marketing inspirée des traditions malgaches.",
     result: "+40% de reconnaissance de marque sur les réseaux sociaux.",
-    image: assets2,
+    image: palmierAsset.url,
     tags: ["Branding", "Marketing", "Visuel"],
     link: null,
   },
@@ -18,7 +18,7 @@ const projects = [
     problem: "Les recruteurs peinent à trouver les bons profils localement.",
     solution: "Une plateforme type LinkedIn pour faciliter la mise en relation candidats / employeurs.",
     result: "Prototype Figma complet, prêt pour le développement.",
-    image: assets1,
+    image: profilyAsset.url,
     tags: ["UI/UX", "Figma", "Product Design"],
     link: "https://www.figma.com/design/jobDb7ToSg4nF5yb21h3WM/Untitled?node-id=80-787&t=4U9nne8h0HpOntTE-1",
   },
@@ -27,7 +27,7 @@ const projects = [
     problem: "Une entreprise de bicyclette sans présence digitale.",
     solution: "Identité visuelle complète + site web et ERP Dolibarr intégré.",
     result: "Plateforme e-commerce fonctionnelle et image de marque cohérente.",
-    image: assets3,
+    image: stellarAsset.url,
     tags: ["Vue.js", "Figma", "Dolibarr"],
     link: "https://www.figma.com/design/3Vi8jIrFKsfROPYjoui1xR/Stellar?node-id=0-1&t=COpJx22GbLblxs9g-1",
   },
