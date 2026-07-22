@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
-import assets1 from "@/assets/Asset 22.png";
-import assets2 from "@/assets/Asset 12.png";
-import assets3 from "@/assets/Component 4.png";
+import assets1 from "@/assets/asset-22.png";
+import assets2 from "@/assets/asset-12.png";
+import assets3 from "@/assets/component-4.png";
 
 const projects = [
   {
