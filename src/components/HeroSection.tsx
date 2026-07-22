@@ -1,5 +1,5 @@
 import { ArrowRight, Sparkles } from "lucide-react";
-import photo from "@/assets/Rectangle 4.png";
+import photo from "@/assets/rectangle-4.png";
 
 const HeroSection = () => {
   return (
