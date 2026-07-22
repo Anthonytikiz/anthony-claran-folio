@@ -1,5 +1,5 @@
 import { ArrowRight, Sparkles } from "lucide-react";
-import profileAsset from "@/assets/profile.png.asset.json";
+import photo from "@/assets/Rectangle 4.png";
 
 const HeroSection = () => {
   return (
@@ -64,7 +64,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-tr from-blue-500/30 to-indigo-500/20 rounded-3xl blur-2xl" />
               <div className="relative w-72 h-80 sm:w-80 sm:h-96 rounded-3xl overflow-hidden border border-border shadow-2xl bg-white">
-                <img src={profileAsset.url} alt="Anthony Claran" className="w-full h-full object-cover" />
+                <img src={photo} alt="Anthony Claran" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl border border-border p-4 flex items-center gap-3 animate-float">
                 <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
